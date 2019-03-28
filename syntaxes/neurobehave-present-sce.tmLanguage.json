@@ -1,0 +1,133 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Neurobehavioral Presentation Scenario",
+	"patterns": [ 
+		{"include": "#header" }, 
+		{"include": "#sdl_section"}, 
+		{"include": "#pcl_section"} 
+	],
+	"repository": {
+		"header": {
+			"begin": "\\A",
+			"end": "^[ \\t]*(?=(begin);)",
+			"patterns": [ 
+				{"include": "#header_parameter"}, 
+				{"include": "#numeric"},
+				{"include": "#string"},
+				{"include": "#comment"}
+			]
+		},
+		"comment": {
+			"patterns": [{"match": "#.*$", "name": "comment.line"}]
+		},
+		"header_parameter": {
+			"patterns": [
+				{"match": "active_buttons", "name": "support.variable"},
+				{"match": "antialias", "name": "support.variable"},
+				{"match": "back_clip_distance", "name": "support.variable"},
+				{"match": "button_codes", "name": "support.variable"},
+				{"match": "channels", "name": "support.variable"},
+				{"match": "bits_per_sample", "name": "support.variable"},
+				{"match": "sampling_rate", "name": "support.variable"},
+				{"match": "code_delay", "name": "support.variable"},
+				{"match": "default_all_responses", "name": "support.variable"},
+				{"match": "default_attenuation", "name": "support.variable"},
+				{"match": "default_background_color", "name": "support.variable"},
+				{"match": "default_clear_active_stimuli", "name": "support.variable"},
+				{"match": "default_cue_events", "name": "support.variable"},
+				{"match": "default_cue_event_port", "name": "support.variable"},
+				{"match": "default_default_2d_on_top", "name": "support.variable"},
+				{"match": "default_deltat", "name": "support.variable"},
+				{"match": "default_delta_time", "name": "support.variable"},
+				{"match": "default_draw_mode", "name": "support.variable"},
+				{"match": "default_font", "name": "support.variable"},
+				{"match": "default_font_size", "name": "support.variable"},
+				{"match": "default_formatted_text", "name": "support.variable"},
+				{"match": "default_invert_caption", "name": "support.variable"},
+				{"match": "default_max_responses", "name": "support.variable"},
+				{"match": "default_mesh_ignore_warnings", "name": "support.variable"},
+				{"match": "default_monitor_sounds", "name": "support.variable"},
+				{"match": "default_monitor_videos", "name": "support.variable"},
+				{"match": "default_optimize", "name": "support.variable"},
+				{"match": "default_output_port", "name": "support.variable"},
+				{"match": "default_pan", "name": "support.variable"},
+				{"match": "default_path", "name": "support.variable"},
+				{"match": "default_per_pixel_lighting", "name": "support.variable"},
+				{"match": "default_picture_duration", "name": "support.variable"},
+				{"match": "default_stimulus_time_in", "name": "support.variable"},
+				{"match": "default_stimulus_time_out", "name": "support.variable"},
+				{"match": "default_text_align", "name": "support.variable"},
+				{"match": "default_text_color", "name": "support.variable"},
+				{"match": "default_trial_duration", "name": "support.variable"},
+				{"match": "default_trial_start_delay", "name": "support.variable"},
+				{"match": "default_trial_type", "name": "support.variable"},
+				{"match": "default_volume", "name": "support.variable"},
+				{"match": "event_code_delimiter", "name": "support.variable"},
+				{"match": "field_of_view", "name": "support.variable"},
+				{"match": "front_clip_distance", "name": "support.variable"},
+				{"match": "no_logfile", "name": "support.variable"},
+				{"match": "pcl_file", "name": "support.variable"},
+				{"match": "pulse_code", "name": "support.variable"},
+				{"match": "pulse_out", "name": "support.variable"},
+				{"match": "pulse_value", "name": "support.variable"},
+				{"match": "pulse_width", "name": "support.variable"},
+				{"match": "pulses_per_scan", "name": "support.variable"},
+				{"match": "randomize_trials", "name": "support.variable"},
+				{"match": "response_logging", "name": "support.variable"},
+				{"match": "respo", "name": "support.variable"},
+				{"match": "response_port_output", "name": "support.variable"},
+				{"match": "scan_period", "name": "support.variable"},
+				{"match": "scenario", "name": "support.variable"},
+				{"match": "scenario_type", "name": "support.variable"},
+				{"match": "screen_width_distance", "name": "support.variable"},
+				{"match": "screen_height_distance", "name": "support.variable"},
+				{"match": "screen_distance", "name": "support.variable"},
+				{"match": "max_y", "name": "support.variable"},
+				{"match": "screen_width", "name": "support.variable"},
+				{"match": "screen_height", "name": "support.variable"},
+				{"match": "screen_bit_depth", "name": "support.variable"},
+				{"match": "sequence_interrupt", "name": "support.variable"},
+				{"match": "stimulus_properties", "name": "support.variable"},
+				{"match": "target_button_codes", "name": "support.variable"},
+				{"match": "write_codes", "name": "support.variable"}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{"match": "([-+]?[0-9]+|[-+]?[0-9]*\\.?[0-9]+.)", "name": "constant.numeric"},
+				{"match": "\".*\"", "name": "constant.character"}
+			]
+		},
+		"#sdl_section": {
+			"begin": "^[ \\t](begin)[ \\t];[ \\t]$",
+			"end": "(^[ \\t]*(?=(begin_pcl);))|\\Z",
+			"beginCaptures": {
+				"1": {"name": "keyword.other"}
+			},
+			"patterns": [
+				{"include": "#sdl_definitions"}
+			]
+		},
+		"#sdl_definitions": {
+			"patterns": [
+				{
+					"begin": "^[ \\t]*([\\w_]+)[ \\t]*\\{",
+					"end": "\\}[ \\t]*([\\w_]+)?[ \\t];",
+					"beginCaptures": {"1": {"name": "entity.name.tag"}},
+					"endCaptures": {"1": {"name": "variable.parameter"}},
+					"patterns": [{"include": "#sdl_definitions"}]
+				},
+				{"include": "#comment"}
+			]
+		},
+		"#pcl_section": {
+			"begin": "^[ \\t](begin_pcl)[ \\t];[ \\t]$",
+			"end": "\\Z",
+			"beginCaptures": {
+				"1": {"name": "keyword.other"}
+			},
+			"patterns": [{"include": "source.nb_pcl"}]
+		}
+	},
+	"scopeName": "source.nb_sce"
+}

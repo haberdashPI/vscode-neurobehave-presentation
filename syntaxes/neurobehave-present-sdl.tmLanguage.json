@@ -1,0 +1,11 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Neurobehavioral Presentation Scenario Definition",
+	"patterns": [ 
+		{"include": "#header" }, 
+		{"include": "#sdl_section"}, 
+		{"include": "#pcl_section"} 
+	],
+	"repository": {
+    }
+}
