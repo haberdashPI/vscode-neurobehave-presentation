@@ -1,0 +1,36 @@
+{
+    "name": "neurobehave-presentation",
+    "displayName": "neurobehave-presentation",
+    "description": "Syntax highlighting for Neurobehavioral Systems' Presentation software",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "neurobehave-present-sce",
+            "aliases": ["Neurobehavioral Presentation Scenario", "neurobehave-present-sce"],
+            "extensions": ["sce"],
+            "configuration": "./language-configuration.json"
+        },
+        {
+            "id": "neurobehave-present-pcl",
+            "aliases": ["Neurobehavioral Presentation Control Language", "neurobehave-present-pcl"],
+            "extensions": ["sce"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "neurobehave-present-sce",
+            "scopeName": "source.nb.sce",
+            "path": "./syntaxes/neurobehave-present-sce.tmLanguage.json"
+        },
+        {
+            "language": "neurobehave-present-pcl",
+            "scopeName": "source.nb.pcl",
+            "path": "./syntaxes/neurobehave-present-pcl.tmLanguage.json"
+        }]
+    }
+}
