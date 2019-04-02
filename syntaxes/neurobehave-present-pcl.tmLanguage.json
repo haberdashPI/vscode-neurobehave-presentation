@@ -26,7 +26,7 @@
 		"constant": {
 			"patterns": [
 				{"match": "([-+]?[0-9]+|[-+]?[0-9]*\\.?[0-9]+.)", "name": "constant.numeric"},
-				{"match": "\".*\"", "name": "constant.character"}
+				{"match": "\".*(?<!\\)\"", "name": "constant.character"}
 			]
 		},
 		"operator": {
@@ -43,5 +43,6 @@
 				{"match": "\\b(begin|end)\\b", "name": "keyword.control.block"}
 			]
 		}
-	}
+	},
+	"scopeName": "source.nb_pcl"
 }
