@@ -81,11 +81,11 @@ repository:
         name: keyword.control.loop
       - match: \b(if|elseif|else|then)\b
         name: keyword.control.condition
-      - match: \b(begin|end)\b
+      - match: \b(begin|end|begin_pcl)\b
         name: keyword.control.block
   subroutine:
     patterns:
-      - begin: 'sub'
+      - begin: '\bsub\b'
         beginCaptures:
           '0': 
             name: storage.type.function
