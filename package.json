@@ -15,11 +15,13 @@
             {
                 "id": "neurobehave-present",
                 "aliases": [
-                    "Neurobehavioral Presentation Control Language",
+                    "Neurobehavioral Systems' Presentation",
                     "neurobehave-present"
                 ],
                 "extensions": [
-                    "pcl"
+                    "pcl",
+                    "sce",
+                    "sdl"
                 ],
                 "configuration": "./language-configuration.json"
             }
