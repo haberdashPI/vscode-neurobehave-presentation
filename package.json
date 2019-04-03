@@ -3,6 +3,7 @@
     "displayName": "neurobehave-presentation",
     "description": "Syntax highlighting for Neurobehavioral Systems' Presentation software",
     "version": "0.0.1",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.32.0"
     },
@@ -12,21 +13,10 @@
     "contributes": {
         "languages": [
             {
-                "id": "neurobehave-present-sce",
-                "aliases": [
-                    "Neurobehavioral Presentation Scenario",
-                    "neurobehave-present-sce"
-                ],
-                "extensions": [
-                    "sce"
-                ],
-                "configuration": "./language-configuration.json"
-            },
-            {
-                "id": "neurobehave-present-pcl",
+                "id": "neurobehave-present",
                 "aliases": [
                     "Neurobehavioral Presentation Control Language",
-                    "neurobehave-present-pcl"
+                    "neurobehave-present"
                 ],
                 "extensions": [
                     "pcl"
@@ -36,16 +26,16 @@
         ],
         "grammars": [
             {
-                "language": "neurobehave-present-sce",
-                "scopeName": "source.nb_sce",
-                "path": "./syntaxes/neurobehave-present-sce.tmLanguage.json"
-            },
-            {
-                "language": "neurobehave-present-pcl",
-                "scopeName": "source.nb_pcl",
-                "path": "./syntaxes/neurobehave-present-pcl.tmLanguage.json"
+                "language": "neurobehave-present",
+                "scopeName": "source.pcl",
+                "path": "./syntaxes/neurobehave-present.tmLanguage.json"
             }
         ]
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "test": "yarn run compile",
+        "compile": "js-yaml syntaxes/neurobehave-present.tmLanguage.yaml > syntaxes/neurobehave-present.tmLanguage.json"
     },
     "dependencies": {
         "js-yaml": "^3.13.0"
