@@ -37,7 +37,7 @@
     },
     // indentation
     "indentationRules": {
-        "increaseIndentPattern": "^[^#]*(\\{|begin|then)\\s*",
+        "increaseIndentPattern": "^[^#]*(\\{|begin|then)[^;]*$",
         "decreaseIndentPattern": "^[^#]*(\\}|end).*$"
     }
 }
