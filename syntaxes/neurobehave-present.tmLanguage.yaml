@@ -114,6 +114,4 @@ repository:
     patterns: 
       - match: '\b(([:alpha]|_)([0-9]|[:alpha]|_)+)\b'
         name: variable.parameter
-        
-
-scopeName: source.nb_pcl
+scopeName: source.neuro_present

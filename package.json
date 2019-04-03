@@ -29,7 +29,7 @@
         "grammars": [
             {
                 "language": "neurobehave-present",
-                "scopeName": "source.pcl",
+                "scopeName": "source.neuro_present",
                 "path": "./syntaxes/neurobehave-present.tmLanguage.json"
             }
         ]
