@@ -4,7 +4,7 @@
     "displayName": "Neurobehavioral Systems' Presentation",
     "repository": "https://github.com/haberdashPI/vscode-neurobehave-presentation",
     "description": "Syntax highlighting for Neurobehavioral Systems' Presentation software",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "license": "MIT",
     "engines": {
         "vscode": "^1.32.0"
