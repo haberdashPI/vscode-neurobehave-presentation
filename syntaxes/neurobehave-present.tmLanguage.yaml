@@ -24,6 +24,8 @@ repository:
         name: storage.type.double
       - match: \brgb_color\b
         name: storage.type.color
+      - match: \bbool\b
+        name: storage.type.boolean
       - match: \barray(?!<)\b
         name: storage.type.array
       - begin: \b(array)(<)
