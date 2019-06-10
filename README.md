@@ -11,7 +11,7 @@ scripts used to create experiments in Presentation. These have the extension
 
 ## Status
 
-This is early days; highlighting seems to work well, but it is not thoroughly
-tested yet. The extension is relatively dumb: very little validation of the
-syntax occurs. Some forms that are syntactically invalid (because they are in
-the wrong code context) are highlighted to look valid.
+This *should* work for your day to day coding purposes. Highlighting seems to
+work well, but has only been moderately tested. The extension is relatively
+dumb: nothing fancy is done to handle different contexts (e.g. the SDL header
+and PCL program body).

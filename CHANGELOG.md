@@ -3,6 +3,10 @@
 All notable changes to the "neurobehave-presentation" extension will be
 documented in this file.
 
+## [0.0.4]
+Updated vulnerable dependency. At this point the extension has been
+moderately tested. Updating README to reflect this.
+
 ## [0.0.3]
 Added missing bool keyword.
 
