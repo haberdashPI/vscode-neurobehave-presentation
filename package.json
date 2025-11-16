@@ -42,6 +42,6 @@
         "compile": "js-yaml syntaxes/neurobehave-present.tmLanguage.yaml > syntaxes/neurobehave-present.tmLanguage.json"
     },
     "dependencies": {
-        "js-yaml": "^3.13.0"
+        "js-yaml": "^4.1.1"
     }
 }
